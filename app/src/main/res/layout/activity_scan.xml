@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:paddingTop="48dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="gallery.duyakse04298.fpt.edu.com.project.ScanActivity">
+
+            <RelativeLayout
+                android:id="@+id/rlCameraView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <SurfaceView
+                    android:id="@+id/cameraView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <View
+                    android:background="@drawable/rectangle"
+                    android:layout_centerInParent="true"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_below="@id/rlCameraView"
+                android:id="@+id/overlayBottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:layout_alignParentBottom="true">
+                <ImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/circle"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/ivCheckSuccess"
+                    android:background="@drawable/ic_check_primary_24dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_half_white_close"
+                android:layout_alignParentRight="true"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</layout>
