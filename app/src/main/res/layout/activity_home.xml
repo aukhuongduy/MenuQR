@@ -13,7 +13,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/lightGray"
+        android:clipToPadding="false"
         tools:context="gall ery.duyakse04298.fpt.edu.com.project.HomeActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_home_bottom" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_background_home_bottom" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rlHomeTop"
@@ -22,105 +41,242 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
 
-            <gallery.duyakse04298.fpt.edu.com.project.view.FourPerThreeImageView
+            <gallery.duyakse04298.fpt.edu.com.project.view.FivePerThreeImageView
                 android:id="@+id/ivHomeTopImage"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/home_top_image" />
+                android:src="@drawable/home_test_top_background" />
 
-            <gallery.duyakse04298.fpt.edu.com.project.view.FourPerThreeFrameLayout
+            <gallery.duyakse04298.fpt.edu.com.project.view.FivePerThreeFrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_alignBaseline="@id/ivHomeTopImage"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:background="@drawable/gradient_transparent_to_gray">
 
                 <FrameLayout
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="36dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/qr_accent"
+                        android:elevation="6dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/flHomeSearch"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="@dimen/home_search_bar_height"
                     android:layout_below="@id/rlHomeTop"
                     android:layout_gravity="bottom"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="@dimen/home_search_bar_margin_bottom"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     android:background="@drawable/rectangle_curved_white"
                     android:elevation="5dp"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp">
 
+
                     <EditText
+                        android:id="@+id/edHomeSearch"
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
                         android:layout_gravity="center"
                         android:background="@color/transparent"
                         android:hint="What do you looking for?"
                         android:textAlignment="center"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:windowSoftInputMode="stateAlwaysHidden" />
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_gravity="right|center_vertical"
                         android:padding="8dp"
-                        android:src="@drawable/ic_search_primary_24dp" />
-
+                        android:src="@drawable/ic_search_accent_24dp" />
                 </FrameLayout>
 
-            </gallery.duyakse04298.fpt.edu.com.project.view.FourPerThreeFrameLayout>
+            </gallery.duyakse04298.fpt.edu.com.project.view.FivePerThreeFrameLayout>
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_below="@id/rlHomeTop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_below="@id/rlHomeTop"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="16dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <View
-                    android:background="@color/colorPrimary"
-                    android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout
+                    android:id="@+id/rlHomeHot"
+                    android:clickable="true"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                </View>
-                <View
-                    android:background="@color/colorPrimaryDark"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rectangle_curved_white"
+                    android:elevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeHot"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_whatshot_gray_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeHot"
+                            android:layout_centerHorizontal="true"
+                            android:text="Hot"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout>
+
+                <gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout
+                    android:clickable="true"
+                    android:id="@+id/rlHomeScan"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                </View>
-                <View
-                    android:background="@color/colorPrimaryLighter"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                </View>
+                    android:background="@drawable/rectangle_curved_white"
+                    android:elevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeQR"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/qr_accent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeQR"
+                            android:layout_centerHorizontal="true"
+                            android:text="Scan QR"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <View
-                    android:background="@color/colorPrimaryDarker"
-                    android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout
+                    android:clickable="true"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                </View>
-                <View
-                    android:background="@color/colorPrimaryLightest"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rectangle_curved_white"
+                    android:elevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeNearBy"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_my_location_gray_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeNearBy"
+                            android:layout_centerHorizontal="true"
+                            android:text="Near Me"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout>
+
+                <gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout
+                    android:clickable="true"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                </View>
-                <View
-                    android:background="@color/lightGray"
+                    android:layout_height="0dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-                </View>
+                    android:background="@drawable/rectangle_curved_white"
+                    android:elevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/ivHomeAccount"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_person_gray_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ivHomeAccount"
+                            android:layout_centerHorizontal="true"
+                            android:text="Account"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </gallery.duyakse04298.fpt.edu.com.project.view.SquareRelaytiveLayout>
             </LinearLayout>
+
         </LinearLayout>
+        <RelativeLayout
+            android:layout_marginTop="88dp"
+            android:id="@+id/rlHomeListSearch"
+            android:alpha="0"
+            android:background="@drawable/rectangle_curved_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+        </RelativeLayout>
+
     </RelativeLayout>
 </layout>

@@ -1,11 +1,11 @@
 package gallery.duyakse04298.fpt.edu.com.project.activity;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 import gallery.duyakse04298.fpt.edu.com.project.viewmodel.BaseViewModel;
 
@@ -26,13 +26,29 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     private void initDatabinding() {
         binding = DataBindingUtil.setContentView(this, getLayoutId());
-        this.viewModel = viewModel == null ? getViewModel() : viewModel;
+        this.viewModel = viewModel == null ? setViewModel() : viewModel;
         binding.setVariable(getVariableId(), viewModel);
+    }
+
+    protected void setStatusBarTranslucent(boolean makeTranslucent) {
+        if (makeTranslucent) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        } else {
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+    }
+
+    public T getBinding() {
+        return binding;
+    }
+
+    public V getViewModel() {
+        return viewModel;
     }
 
     public abstract int getLayoutId();
 
-    public abstract V getViewModel();
+    public abstract V setViewModel();
 
     public abstract int getVariableId();
 
