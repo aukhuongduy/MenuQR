@@ -1,0 +1,64 @@
+package gallery.duyakse04298.fpt.edu.com.project.adapter;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+
+import java.util.List;
+
+import gallery.duyakse04298.fpt.edu.com.project.BR;
+import gallery.duyakse04298.fpt.edu.com.project.viewholder.BaseViewHolder;
+
+/**
+ * Created by Khuong Duy on 9/26/2017.
+ */
+
+public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
+    protected final LayoutInflater layoutInflater;
+    protected List<T> listItem;
+    protected Presenter presenter;
+
+    public BaseRecyclerViewAdapter(Context context) {
+        //Get system layout inflate
+        this.layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @Override
+    public void onBindViewHolder(BaseViewHolder holder, int position) {
+        final Object item = listItem.get(position);
+        // set item variable
+        holder.getBinding().setVariable(BR.viewModel, item);
+        holder.getBinding().setVariable(BR.listener, getPresenter());
+        holder.getBinding().executePendingBindings();
+    }
+
+    @Override
+    public int getItemCount() {
+        return listItem.size();
+    }
+
+    public void remove(int position) {
+        listItem.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void clear() {
+        listItem.clear();
+        notifyDataSetChanged();
+    }
+
+    public Presenter getPresenter() {
+        return presenter;
+    }
+
+    public LayoutInflater getLayoutInflater() {
+        return layoutInflater;
+    }
+
+    public interface Presenter {
+    }
+
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
+    }
+}

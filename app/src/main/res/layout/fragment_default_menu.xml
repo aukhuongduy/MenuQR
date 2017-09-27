@@ -1,22 +1,40 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
+        <variable
+            name="adapter"
+            type="android.support.v7.widget.RecyclerView.Adapter" />
+
+        <variable
+            name="layoutManager"
+            type="android.support.v7.widget.RecyclerView.LayoutManager" />
     </data>
+
     <android.support.v4.widget.NestedScrollView
-        android:fillViewport="true"
         android:id="@+id/svItemScrollView"
-        android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         tools:context="gallery.duyakse04298.fpt.edu.com.project.fragment.DefaultMenuFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <RelativeLayout
-            android:descendantFocusability="blocksDescendants"
-            android:background="@color/lightGray"
             android:layout_width="match_parent"
-            android:layout_height="1200dp">
+            android:layout_height="wrap_content"
+            android:background="@color/lightGray"
+            android:descendantFocusability="blocksDescendants">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvDefaultMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:adapter="@{adapter}"
+                app:layoutManager="@{layoutManager}">
+
+            </android.support.v7.widget.RecyclerView>
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>

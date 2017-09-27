@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="gallery.duyakse04298.fpt.edu.com.project.viewmodel.ItemViewModel" />
+
+        <variable
+            name="listener"
+            type="gallery.duyakse04298.fpt.edu.com.project.fragment.DefaultMenuFragment.ItemAdapterClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:onClick="@{() -> listener.onItemClick(viewModel.itemName)}"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/ivItemDefaultMenu"
+            android:layout_width="108dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/test_coffee" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/ivItemDefaultMenu">
+
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tvItemNameDefaultMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.itemName}"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textColor="@color/colorPrimaryLighter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvItemNameDefaultMenu"
+                android:text="@{viewModel.itemDescription}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="@{viewModel.itemPrice}"
+                android:textColor="#4CAF50"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="8dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/ic_eye_gray_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@{viewModel.itemViewedString}"
+                    android:textColor="@color/gray" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

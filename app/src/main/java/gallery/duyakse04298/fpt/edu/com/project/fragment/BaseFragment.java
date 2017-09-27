@@ -1,5 +1,6 @@
 package gallery.duyakse04298.fpt.edu.com.project.fragment;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ public abstract class BaseFragment<T extends ViewDataBinding, V extends BaseView
         View view = binding.getRoot();
         this.viewModel = viewModel == null ? setViewModel() : viewModel;
         binding.setVariable(getVariableId(), viewModel);
-        onCreateFragment();
+        onCreateFragment(container.getContext());
         return view;
     }
 
@@ -36,7 +37,7 @@ public abstract class BaseFragment<T extends ViewDataBinding, V extends BaseView
 
     public abstract V setViewModel();
 
-    public abstract void onCreateFragment();
+    public abstract void onCreateFragment(Context context);
 
 
     public String getFragmentTitle() {
