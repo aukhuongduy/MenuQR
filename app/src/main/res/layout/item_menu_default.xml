@@ -14,19 +14,19 @@
     </data>
 
     <RelativeLayout
-        android:onClick="@{() -> listener.onItemClick(viewModel.itemName)}"
         android:layout_width="match_parent"
         android:layout_height="96dp"
+        android:onClick="@{() -> listener.onItemClick(viewModel.itemIdString)}"
         android:padding="8dp">
 
         <ImageView
-            android:scaleType="centerCrop"
             android:id="@+id/ivItemDefaultMenu"
-            android:layout_width="108dp"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/test_coffee" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/capuchino_test" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,50 +34,86 @@
             android:layout_marginLeft="8dp"
             android:layout_toRightOf="@id/ivItemDefaultMenu">
 
+            <RelativeLayout
+                android:id="@+id/rlItemTagDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/ic_turned_in_accent_24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="33%"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
             <TextView
-                android:textColor="@color/colorPrimary"
                 android:id="@+id/tvItemNameDefaultMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/rlItemTagDiscount"
+                android:singleLine="true"
                 android:text="@{viewModel.itemName}"
-                android:textSize="22sp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="19sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:textColor="@color/colorPrimaryLighter"
+                android:id="@+id/tvItemDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvItemNameDefaultMenu"
-                android:text="@{viewModel.itemDescription}" />
+                android:text="@{viewModel.itemDescription}"
+                android:textColor="@color/colorPrimaryLighter"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvItemRetailPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvItemDescription"
+                android:text="@{viewModel.itemRetailPrice}"
+                android:textColor="@color/colorAccentLightest"
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="2dp"
                 android:text="@{viewModel.itemPrice}"
-                android:textColor="#4CAF50"
-                android:textSize="22sp"
+                android:textColor="@color/colorAccentLighter"
+                android:textSize="16sp"
                 android:textStyle="bold" />
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="4dp"
                 android:layout_marginRight="8dp">
 
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_eye_gray_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="8dp"
                     android:text="@{viewModel.itemViewedString}"
-                    android:textColor="@color/gray" />
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 

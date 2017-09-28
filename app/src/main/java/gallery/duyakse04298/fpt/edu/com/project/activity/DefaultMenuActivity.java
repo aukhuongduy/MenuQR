@@ -1,15 +1,21 @@
 package gallery.duyakse04298.fpt.edu.com.project.activity;
 
+import android.app.FragmentManager;
+import android.content.Context;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import gallery.duyakse04298.fpt.edu.com.project.BR;
 import gallery.duyakse04298.fpt.edu.com.project.R;
+import gallery.duyakse04298.fpt.edu.com.project.adapter.BaseRecyclerViewAdapter;
 import gallery.duyakse04298.fpt.edu.com.project.adapter.DefaultMenuViewPagerAdapter;
 import gallery.duyakse04298.fpt.edu.com.project.databinding.ActivityDefaultMenuBinding;
+import gallery.duyakse04298.fpt.edu.com.project.fragment.DefaultItemFragment;
 import gallery.duyakse04298.fpt.edu.com.project.viewmodel.ActivityDefaultMenuViewModel;
 
 public class DefaultMenuActivity extends BaseActivity<ActivityDefaultMenuBinding, ActivityDefaultMenuViewModel> implements View.OnClickListener{
@@ -43,13 +49,14 @@ public class DefaultMenuActivity extends BaseActivity<ActivityDefaultMenuBinding
                 getBinding().vBackgroundDefaultMenuToolbar.setAlpha(alpha);
             }
         });
-        DefaultMenuViewPagerAdapter adapter = new DefaultMenuViewPagerAdapter(getSupportFragmentManager());
+               DefaultMenuViewPagerAdapter adapter = new DefaultMenuViewPagerAdapter(getSupportFragmentManager());
         getBinding().vpDetailViewPager.setAdapter(adapter);
         getBinding().tlDetailViewPagerTab.setupWithViewPager(getBinding().vpDetailViewPager);
         getBinding().tlDetailViewPagerTab.setTabMode(TabLayout.MODE_SCROLLABLE);
         getBinding().ivDefaultMenuBack.setOnClickListener(this);
 
     }
+
 
     public int getTopImageViewHeightInPixel() {
         DisplayMetrics metrics = new DisplayMetrics();
@@ -74,4 +81,5 @@ public class DefaultMenuActivity extends BaseActivity<ActivityDefaultMenuBinding
                 break;
         }
     }
+
 }

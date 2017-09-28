@@ -15,17 +15,18 @@ import gallery.duyakse04298.fpt.edu.com.project.viewmodel.ItemViewModel;
  */
 
 public class Ultil {
-    public static ArrayList<ItemViewModel> LIST_DUMMY = new ArrayList<ItemViewModel>() {{
-        add(new ItemViewModel(1,"Coffe","T0001","Coffee & Milk","35.000 đ", 654));
-        add(new ItemViewModel(2,"Coffe","T0001","Coffee & Milk","35.000 đ", 654));
-        add(new ItemViewModel(3,"Coffe","T0001","Coffee & Milk","35.000 đ", 654));
-    }};
-
 
     public static float convertDpToPixel(float dp, Context context) {
         Resources r = context.getResources();
         DisplayMetrics metrics = r.getDisplayMetrics();
         float px = dp * ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return px;
+    }
+
+    public static int convertDpToPixelInt(float dp, Context context) {
+        Resources r = context.getResources();
+        DisplayMetrics metrics = r.getDisplayMetrics();
+        float px = dp * ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        return (int)px;
     }
 }

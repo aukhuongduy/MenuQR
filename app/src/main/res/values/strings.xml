@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">Menu</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sample_infomation">Cappuccino là một thức uống sang trọng và cầu kỳ. Tách dùng để thưởng thức cà phê Cappuccino phải được làm bằng đá hoặc sứ, có thành dầy để giữ nóng lâu cho cà phê bên trong. Tách phải được hâm nóng trước khi phục vụ. Một tách cà phê Cappuccino bao gồm ba phần chính: cà phê espresso, sữa nóng và sữa sủi bọt.</string>
+    <string name="sample_text_medium">Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. </string>
 </resources>

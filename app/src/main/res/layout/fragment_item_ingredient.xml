@@ -1,0 +1,32 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="gallery.duyakse04298.fpt.edu.com.project.fragment.ItemIngredientFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/tvItemIngredient"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryLighter"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Ingredient" />
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/textDefaultColor"
+            android:text="Thành phần: Caffee 15%, Sữa đặc 10%, Sữa tươi 5%, nước và các thành phần các vừa đủ."
+            android:layout_below="@id/tvItemIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+</layout>

@@ -16,12 +16,14 @@
 
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:clipToPadding="false">
 
             <android.support.design.widget.AppBarLayout
                 android:id="@+id/ablDefaultMenu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:elevation="6dp">
 
                 <android.support.design.widget.CollapsingToolbarLayout
                     android:id="@+id/collapsing_toolbar"
@@ -39,19 +41,21 @@
                         android:layout_gravity="top"
                         android:fitsSystemWindows="true"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/home_test_top_background"
+                        android:src="@drawable/top_background"
                         app:layout_collapseMode="parallax"
                         tools:ignore="ContentDescription" />
+
                     <gallery.duyakse04298.fpt.edu.com.project.view.FivePerThreeFrameLayout
-                        android:background="@drawable/gradient_black_tranparent_white"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"/>
+                        android:layout_height="0dp"
+                        android:background="@drawable/gradient_black_tranparent_white" />
+
                     <View
-                        app:layout_collapseMode="pin"
                         android:id="@+id/vBackgroundDefaultMenuToolbar"
-                        android:background="@color/colorPrimary"
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"/>
+                        android:layout_height="80dp"
+                        android:background="@color/colorPrimary"
+                        app:layout_collapseMode="pin" />
 
                     <android.support.v7.widget.Toolbar
                         android:id="@+id/tbDefaultMenu"
@@ -86,12 +90,13 @@
                 </android.support.design.widget.CollapsingToolbarLayout>
 
                 <android.support.design.widget.TabLayout
+
                     android:id="@+id/tlDetailViewPagerTab"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:background="@color/colorPrimary"
                     app:tabIndicatorColor="@color/colorAccentLightest"
                     app:tabSelectedTextColor="@color/colorAccentLightest"
-                    android:background="@color/colorPrimary"
                     app:tabTextColor="@color/white">
 
                 </android.support.design.widget.TabLayout>

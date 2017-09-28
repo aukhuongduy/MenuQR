@@ -22,9 +22,9 @@
 
         <!-- TODO: Update blank fragment layout -->
         <RelativeLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lightGray"
             android:descendantFocusability="blocksDescendants">
 
             <android.support.v7.widget.RecyclerView

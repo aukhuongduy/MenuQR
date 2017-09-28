@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import gallery.duyakse04298.fpt.edu.com.project.activity.DefaultMenuActivity;
 import gallery.duyakse04298.fpt.edu.com.project.fragment.BaseFragment;
 import gallery.duyakse04298.fpt.edu.com.project.fragment.DefaultMenuFragment;
 

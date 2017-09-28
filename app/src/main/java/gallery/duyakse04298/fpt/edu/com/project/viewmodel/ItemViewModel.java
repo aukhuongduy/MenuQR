@@ -9,6 +9,7 @@ public class ItemViewModel extends BaseViewModel {
     private String itemName;
     private String itemCode;
     private String itemDescription;
+    private String itemRetailPrice;
     private String itemPrice;
     private int itemViewed;
 
@@ -16,11 +17,12 @@ public class ItemViewModel extends BaseViewModel {
         this.itemId = itemId;
     }
 
-    public ItemViewModel(int itemId, String itemName, String itemCode, String itemDescription, String itemPrice, int itemViewed) {
+    public ItemViewModel(int itemId, String itemName, String itemCode, String itemDescription, String itemRetailPrice, String itemPrice, int itemViewed) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemCode = itemCode;
         this.itemDescription = itemDescription;
+        this.itemRetailPrice = itemRetailPrice;
         this.itemPrice = itemPrice;
         this.itemViewed = itemViewed;
     }
@@ -28,6 +30,11 @@ public class ItemViewModel extends BaseViewModel {
     public int getItemId() {
         return itemId;
     }
+
+    public String getItemIdString() {
+        return itemId + "";
+    }
+
 
     public void setItemId(int itemId) {
         this.itemId = itemId;
@@ -55,6 +62,14 @@ public class ItemViewModel extends BaseViewModel {
 
     public void setItemDescription(String itemDescription) {
         this.itemDescription = itemDescription;
+    }
+
+    public String getItemRetailPrice() {
+        return itemRetailPrice;
+    }
+
+    public void setItemRetailPrice(String itemRetailPrice) {
+        this.itemRetailPrice = itemRetailPrice;
     }
 
     public String getItemPrice() {

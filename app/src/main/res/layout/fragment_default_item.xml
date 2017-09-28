@@ -1,0 +1,62 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:clickable="true"
+        tools:context="gallery.duyakse04298.fpt.edu.com.project.fragment.DefaultItemFragment">
+
+        <ImageView
+            android:id="@+id/ivItemDetailDefaultMenu"
+            android:layout_width="match_parent"
+            android:layout_height="216dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/capuchino_test" />
+
+        <android.support.design.widget.TabLayout
+            style="@style/MyTabTextAppearance"
+            android:layout_below="@id/ivItemDetailDefaultMenu"
+            android:id="@+id/tlItemDetailDefaultMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimary"
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="@color/colorAccentLightest"
+            app:tabSelectedTextColor="@color/colorAccentLightest"
+            app:tabTextColor="@color/white" />
+        <RelativeLayout
+            android:id="@+id/rlBottomItemDetailDefaultMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorAccent">
+            <RelativeLayout
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/tvDefaultItemAdd"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="Add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpItemDetailDefaultMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rlBottomItemDetailDefaultMenu"
+            android:layout_below="@+id/tlItemDetailDefaultMenu"
+            android:background="@color/white">
+        </android.support.v4.view.ViewPager>
+
+    </RelativeLayout>
+</layout>

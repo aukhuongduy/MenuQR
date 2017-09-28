@@ -17,6 +17,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     protected final LayoutInflater layoutInflater;
     protected List<T> listItem;
     protected Presenter presenter;
+    protected Decorator decorator;
 
     public BaseRecyclerViewAdapter(Context context) {
         //Get system layout inflate
@@ -30,6 +31,9 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         holder.getBinding().setVariable(BR.viewModel, item);
         holder.getBinding().setVariable(BR.listener, getPresenter());
         holder.getBinding().executePendingBindings();
+        if (decorator != null) {
+            decorator.decorate(holder, position, getItemViewType(position));
+        }
     }
 
     @Override
@@ -58,7 +62,15 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     public interface Presenter {
     }
 
+    public interface Decorator {
+        void decorate(BaseViewHolder holder, int position, int viewType);
+    }
+
     public void setPresenter(Presenter presenter) {
         this.presenter = presenter;
+    }
+
+    public void setDecorator(Decorator decorator) {
+        this.decorator = decorator;
     }
 }

@@ -23,19 +23,24 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
 
-        <activity android:name=".activity.HomeActivity" android:windowSoftInputMode="adjustPan|stateHidden">
+        <activity
+            android:name=".activity.HomeActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ScanActivity" android:theme="@style/AppTheme.NoTitle">
+        <activity
+            android:name=".activity.ScanActivity"
+            android:theme="@style/AppTheme.NoTitle"></activity>
+        <activity
+            android:name=".activity.DefaultMenuActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
-        <activity android:name=".activity.DefaultMenuActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
+        <activity android:name=".activity.DefaultItemActivity"></activity>
     </application>
 
 </manifest>

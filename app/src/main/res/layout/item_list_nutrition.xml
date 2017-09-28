@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="gallery.duyakse04298.fpt.edu.com.project.viewmodel.ItemListNutritionViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <ImageView
+            android:id="@+id/ivStatusItemListNutrition"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:background="@{viewModel.status}" />
+
+        <TextView
+            android:textColor="@color/textDefaultColor"
+            android:layout_marginRight="8dp"
+            android:id="@+id/tvNameItemListNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/ivStatusItemListNutrition"
+            android:text="@{viewModel.name}"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textColor="@color/textDefaultColor"
+            android:id="@+id/tvTypeItemListNutrition"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@{viewModel.dram}"
+            android:textAlignment="textEnd"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textColor="@color/textDefaultColor"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tvValueItemListNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tvTypeItemListNutrition"
+            android:text="@{viewModel.valueString}"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tvValueItemListNutrition"
+            android:layout_toRightOf="@id/tvNameItemListNutrition"
+            android:background="@drawable/dash_line_primary"></View>
+
+
+    </RelativeLayout>
+</layout>

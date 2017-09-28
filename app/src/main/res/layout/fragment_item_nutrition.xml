@@ -1,0 +1,132 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="gallery.duyakse04298.fpt.edu.com.project.viewmodel.ItemNutritionFragmentViewModel" />
+
+        <variable
+            name="layoutManager"
+            type="android.support.v7.widget.RecyclerView.LayoutManager" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="gallery.duyakse04298.fpt.edu.com.project.fragment.ItemNutritionFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/tvItemTagNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"
+            android:text="Nutrition"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccentLighter"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rlHeaderItemNutrition"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@id/tvItemTagNutrition"
+            android:padding="8dp">
+
+            <TextView
+                android:textColor="@color/textDefaultColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textColor="@color/textDefaultColor"
+                android:id="@+id/tvHeaderDetailItemNutrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Dram"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textColor="@color/textDefaultColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@id/tvHeaderDetailItemNutrition"
+                android:text="Values"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llItemNutritionBottom"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/circle_green" />
+
+            <TextView
+                android:textColor="@color/textDefaultColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="Low"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/circle_orange" />
+
+            <TextView
+                android:textColor="@color/textDefaultColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="Medium"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/circle_red" />
+
+            <TextView
+                android:textColor="@color/textDefaultColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="Hight"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvItemNutrition"
+            app:adapter="@{viewModel.adapter}"
+            app:layoutManager="@{layoutManager}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/llItemNutritionBottom"
+            android:layout_below="@id/rlHeaderItemNutrition">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</layout>
